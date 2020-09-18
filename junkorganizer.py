@@ -5,23 +5,24 @@ import datetime
 from stat import ST_SIZE, ST_ATIME
 
 
-#
-def organize(args):
+# '''function that accepts input from the argparse '''
+def arrange(args):
     path = args.path
     organiseType = args.by
 
-    # Exception handling for invalid location passed as argument
+    # '''Exception handling for invalid location passed as argument'''
     try:
         fileDetails = getFileData(path)
     except FileNotFoundError:
         print('Please enter a valid directory path')
         return
 
+    #'''os module checks if the organized folder is present'''
     if not os.path.exists(path + '\\organized'):
         os.makedirs(path + '\\organized')
     finalPath = path + '\\organized\\'
 
-    #
+    # '''Choice based on the choices=['extension','size','recently-used']'''
     if organiseType == 'extension':
         Extension(path, fileDetails, finalPath)
 
@@ -38,7 +39,7 @@ def organize(args):
 fileData = []
 
 
-# Recursively list out all the files and returns the required fileDetails for all the files
+# '''Function that checks out all hte files present in the folder recursively and stores in a list fileData'''
 def getFileData(path):
     for file in os.scandir(path):
         if not file.is_dir():
@@ -53,7 +54,7 @@ def getFileData(path):
             fileData.append(
                 [file_name, file_path, file_ext, file_size, file_last_used])
 
-        # If there are any subfolers availabe
+        # '''If there are any subfolers availabe'''
         else:
             fileData + [list_data for list_data in (getFileData(file.path))]
 
@@ -157,4 +158,4 @@ if __name__ == '__main__':
                         choices=['extension', 'size', 'recently_used'])
 
     args = parser.parse_args()
-    organize(args)
+    arrange(args)
