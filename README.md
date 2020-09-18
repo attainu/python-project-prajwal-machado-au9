@@ -2,7 +2,7 @@
 
 _Folders and files need to be organised so that while searching files or folders it is easily found without toggling into the search bar and searching for a specific extension file._
 
-# #Motivation:
+# Motivation:
 
 _It is often observed that the Document or the Downloads folder of the computer are highly unorganised with all kinds of files in a single folder. This program is a target for people with mostly unorganised Files in a folder. The main aim of this program is to organise the files according to users preference._
 
