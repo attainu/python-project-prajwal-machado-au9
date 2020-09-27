@@ -10,18 +10,19 @@ _So this program mainly aims at a Python script which organises the folders base
 
 # Libraries and Modules Used:
 
-_Argparse_
-_OS_
-_Stat_
-_Datetime_
-_Shutil_
+_Argparse_ <br/>
+_OS_ <br/>
+_Stat_ <br/>
+_Datetime_ <br/>
+_Shutil_ <br/>
 
 # Refernces
 
-_Python Documentation_
+_Python Documentation_ <br/>
 _Automate the Boring Stuff_
 
 # Future Scope
 
-_The application can be integrated with the GUI so that the file can be organised by a single click with the help of a desktop application._
+_The application can be integrated with the GUI so that the file can be organised by a single click with the help of a desktop application._ <br/>
+
 _The code can be integrated and made used to return back to initial state before the organisation of the files._

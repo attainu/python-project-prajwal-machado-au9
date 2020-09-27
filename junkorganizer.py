@@ -17,7 +17,7 @@ def arrange(args):
         print('Please enter a valid directory path')
         return
 
-    #'''os module checks if the organized folder is present'''
+    # '''os module checks if the organized folder is present'''
     if not os.path.exists(path + '\\organized'):
         os.makedirs(path + '\\organized')
     finalPath = path + '\\organized\\'
@@ -39,7 +39,7 @@ def arrange(args):
 fileData = []
 
 
-# '''Function that checks out all hte files present in the folder recursively and stores in a list fileData'''
+#Function that checks out all hte files present in the folder recursively and stores in a list fileData
 def getFileData(path):
     for file in os.scandir(path):
         if not file.is_dir():
@@ -61,7 +61,7 @@ def getFileData(path):
     return fileData
 
 
-# '''rearranges based on the extension of the files'''
+#rearranges based on the extension of the files
 def Extension(path, fileDetails, finalPath):
 
     for list_data in fileDetails:
@@ -75,7 +75,7 @@ def Extension(path, fileDetails, finalPath):
         shutil.move(file_path, finalPath + extension + '\\' + file_name)
 
 
-# '''rearranges the files based on their sizes'''
+#rearranges the files based on their sizes
 def Size(path, fileDetails, finalPath):
     for list_data in fileDetails:
         file_name = list_data[0]
@@ -101,7 +101,7 @@ def Size(path, fileDetails, finalPath):
 
             shutil.move(file_path, finalPath +
                         'not exceeding 100 MB\\' + file_name)
-        #'''Larger files which exceed 100 MB in size'''
+        #Larger files which exceed 100 MB in size
         elif size >= 104857600:
             if not os.path.exists(finalPath + 'Large Files'):
                 os.makedirs(finalPath + 'Large Files')
